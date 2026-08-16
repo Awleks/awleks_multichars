@@ -413,7 +413,7 @@ RegisterNetEvent('awleks_multichar:client:closeForQboxApartments', function()
     Bridge.NotifyPlayerLoaded()
 end)
 
-AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
+RegisterNetEvent('qb-clothes:client:CreateFirstCharacter', function()
     local ped = PlayerPedId()
     SetEntityVisible(ped, true, false)
     SetEntityInvincible(ped, false)

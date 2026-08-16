@@ -141,17 +141,27 @@ function Bridge.ApplyAppearance(ped, skin)
     end
 
     if sys == 'illenium-appearance' then
-        exports['illenium-appearance']:setPedAppearance(ped, skin)
+        pcall(function()
+            exports['illenium-appearance']:setPedAppearance(ped, skin)
+        end)
     elseif sys == 'fivem-appearance' then
-        exports['fivem-appearance']:setPedAppearance(ped, skin)
+        pcall(function()
+            exports['fivem-appearance']:setPedAppearance(ped, skin)
+        end)
     elseif sys == 'qb-clothing' then
-        TriggerEvent('qb-clothing:client:loadPlayerClothing', skin, ped)
+        if type(skin) == 'table' and skin.face then
+            pcall(function()
+                TriggerEvent('qb-clothing:client:loadPlayerClothing', skin, ped)
+            end)
+        end
     elseif sys == 'rcore_clothing' then
         pcall(function()
             exports.rcore_clothing:setPedSkin(ped, skin)
         end)
     elseif sys == 'esx_skin' then
-        TriggerEvent('skinchanger:loadSkin', skin)
+        pcall(function()
+            TriggerEvent('skinchanger:loadSkin', skin)
+        end)
     end
 end
 

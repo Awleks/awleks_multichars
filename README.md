@@ -11,6 +11,50 @@ Works with **ESX**, **QBCore**, and **Qbox**.
 
 Uncomment the matching framework import in `fxmanifest.lua`.
 
+## Qbox
+
+Enable external characters in `qbx_core/config/client.lua`:
+
+```lua
+useExternalCharacters = false -- change to true
+```
+
+Remove `qbx_spawn` from your `server.cfg`.
+
+Uncomment the Qbox lines in `fxmanifest.lua`:
+
+```lua
+'@qbx_core/modules/lib.lua', -- qbox
+'@qbx_core/modules/playerdata.lua', -- qbox
+```
+
+Set `Config.Framework = 'qbox'` in `shared/config.lua`.
+
+## QBCore
+
+Remove these from your `server.cfg`:
+
+- `qb-multicharacter`
+- `qb-spawn`
+
+Uncomment the QBCore line in `fxmanifest.lua`:
+
+```lua
+'@qb-core/shared/locale.lua', -- qbcore
+```
+
+Set `Config.Framework = 'qbcore'` in `shared/config.lua`.
+
+## ESX
+
+Uncomment the ESX line in `fxmanifest.lua`:
+
+```lua
+'@es_extended/imports.lua', -- esx
+```
+
+Set `Config.Framework = 'esx'` in `shared/config.lua`.
+
 ## Config
 
 ### `shared/config.lua`

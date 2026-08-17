@@ -196,6 +196,7 @@ end)
 
 RegisterNetEvent('awleks_multichar:client:setupSpawns', function(cData, new, apps)
     currentCharacter = cData
+    Bridge.CurrentCharacter = cData
     spawnIsNew = new and true or false
     spawnLocations = collectSpawns(new, apps)
     SendNUIMessage({

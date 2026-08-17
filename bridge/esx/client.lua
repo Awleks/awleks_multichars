@@ -12,9 +12,14 @@ function Bridge.GetJobName()
 end
 
 function Bridge.GetLastPosition()
-    local player = Bridge.GetPlayerData()
-    local coords = player and (player.coords or player.position)
+    local coords = Bridge.CurrentCharacter and Bridge.CurrentCharacter.position
+
+    if not coords then
+        local player = Bridge.GetPlayerData()
+        coords = player and (player.coords or player.position)
+    end
     if not coords then return nil end
+
     return {
         x = coords.x,
         y = coords.y,

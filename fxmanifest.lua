@@ -5,7 +5,7 @@ lua54 'yes'
 name 'Awleks Multicharacter'
 author 'Awleks'
 description 'Multicharacter, identity, and spawn selector'
-version '1.0.0'
+version '1.0.1'
 
 shared_scripts {
     '@ox_lib/init.lua',
@@ -41,6 +41,7 @@ server_scripts {
     'bridge/esx/server.lua',
     'bridge/custom/server.lua',
     'server/main.lua',
+    'server/version.lua',
 }
 
 ui_page 'build/index.html'
